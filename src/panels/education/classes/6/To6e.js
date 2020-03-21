@@ -4,7 +4,7 @@ import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import Group from '@vkontakte/vkui/dist/components/Group/Group';
-import connect from '@vkontakte/vk-connect'; 
+import bridge from '@vkontakte/vk-bridge'; 
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import InfoRow from '@vkontakte/vkui/dist/components/InfoRow/InfoRow';
@@ -47,7 +47,7 @@ class To6e extends React.Component {
   this.onChangeShare = this.onChangeShare.bind(this);
   }
   onChangeShare(e){
-  connect.send("VKWebAppShare", {"link": "https://vk.com/app7266393_-187421428"})
+  bridge.send("VKWebAppShare", {"link": "https://vk.com/app7266393_-187421428"})
   }
   render(){
   return(

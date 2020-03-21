@@ -1,16 +1,34 @@
-<div align="center">
-  <a href="https://vk.com/centobr42_press_center/">
-    <img width="254" height="254" src="https://sun9-68.userapi.com/c845321/v845321615/a3f6e/VtwaS87uOz0.jpg">
-  </a>
-  <br>
-  <br>
-</div>
+[<img width="134" src="https://vk.com/images/apps/mini_apps/vk_mini_apps_logo.svg">](https://vk.com/services)
 
-# Добро пожаловать!
-`Приложение: "Личный кабинет"`
-`Платформа OC:` <img width="12" height="12" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/M_box.svg/1024px-M_box.svg.png">`Microsoft,` <img width="12" height="12" src="https://mobil-clinic.ru/wp-content/uploads/2017/03/Apple_logo_black.svg_.png">`IOS,` <img width="12" height="12" src="https://fontalpina.com/images/green-clipart-transparent-png-6.png">`Android,` <img width="12" height="12" src="http://pngimg.com/uploads/linux/linux_PNG21.png">`Linux`
-`Платформа разработки:` <img width="14" height="14" src="https://artemzhuravlev.com/wp-content/uploads/2017/08/visual-studio-code-logo.png">`Microsoft Visual Studio Code`
-`Язык программирования:` <img width="14" height="14" src="https://i.pinimg.com/originals/fb/1e/7f/fb1e7f9db2540c3194a9179094a925e2.png">`HTML,` <img width="14" height="14" src="https://www.ascendtraining.com/wp-content/uploads/2015/06/javascript.png">`JavaScript,` <img width="14" height="14" src="https://skillvalue.com/jobs/wp-content/uploads/sites/7/2019/10/nodejs-developer-full-time-job-bucharest.png">`NodeJS,` <img width="14" height="14" src="https://cdn.imgbin.com/18/5/2/imgbin-representational-state-transfer-application-programming-interface-computer-icons-web-api-computer-software-others-wVDdj7ACXn2ANQryeExRJg00V.jpg">`VK API`
-`Разработчик: MGStudio©, Generik SoftWare©`
-`Примечания: не используется для распространения в сети "Интернет" и создано в целях разработки для социальной сети "ВКонтакте"`
-`All right reserved© 2020 `
+# Create VK Mini App [![npm][npm]][npm-url] [![deps][deps]][deps-url]
+
+## How to install
+
+### Create VK Mini App with gh-pages deploy
+
+`npx @vkontakte/create-vk-mini-app <app-directory-name>`
+
+### Create VK Mini App with Zeit deploy
+
+Firstly, you have to create Zeit account and connect it with your GitHub profile — https://zeit.co/
+
+`npx @vkontakte/create-vk-mini-app <app-directory-name> --zeit`
+
+### Create VK Mini App with Surge deploy
+
+Firstly, you have to create Surge account and Surge-domain — https://surge.sh/
+
+`npx @vkontakte/create-vk-mini-app <app-directory-name> --surge <surge-domain>`
+
+## How to start work with app
+
+Go to created folder and run:
+`yarn start` || `npm start` — this will start dev server with hot reload on `localhost:10888`.
+
+`yarn run build` || `npm run build` — this will build production bundle, with tree-shaking, uglify and all this modern fancy stuff
+
+[npm]: https://img.shields.io/npm/v/@vkontakte/create-vk-mini-app.svg
+[npm-url]: https://npmjs.com/package/@vkontakte/create-vk-mini-app
+
+[deps]: https://img.shields.io/david/vkcom/create-vk-mini-app.svg
+[deps-url]: https://david-dm.org/vkcom/create-vk-mini-app

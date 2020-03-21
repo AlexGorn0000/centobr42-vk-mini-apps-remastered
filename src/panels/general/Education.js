@@ -4,7 +4,7 @@ import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
 import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import Group from '@vkontakte/vkui/dist/components/Group/Group';
-import connect from '@vkontakte/vk-connect'; 
+import bridge from '@vkontakte/vk-bridge'; 
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
 import InfoRow from '@vkontakte/vkui/dist/components/InfoRow/InfoRow';
@@ -44,7 +44,7 @@ class Education extends React.Component {
    }
    onAllowNotification(e){
    this.setState({button_text: "Выключить уведомления"});
-   connect.send("VKWebAppAllowNotifications", {"request_id": 7266393})
+   bridge.send("VKWebAppAllowNotifications", {"request_id": 7266393})
    }
    render(){
    return(

@@ -2,19 +2,18 @@ import 'core-js/features/map';
 import 'core-js/features/set';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import connect from '@vkontakte/vk-connect';
+import bridge from '@vkontakte/vk-bridge';
 import App from './App';
-//import registerServiceWorker from './sw';
+import * as eruda from 'eruda';
+import * as erudaCode from 'eruda-code';
+import * as erudaDom from 'eruda-dom';
 
 // Init VK  Mini App
-connect.send('VKWebAppInit');
-connect.sendPromise("VKWebAppShowLeaderBoardBox", {user_result:100}) 
-         .then(data => console.log(data.success)) 
-        .catch(error => console.log(error));
-// Если вы хотите, чтобы ваше веб-приложение работало в оффлайне и загружалось быстрее,
-// расскомментируйте строку с registerServiceWorker();
-// Но не забывайте, что на данный момент у технологии есть достаточно подводных камней
-// Подробнее про сервис воркеры можно почитать тут — https://vk.cc/8MHpmT
-// registerServiceWorker();
+bridge.send('VKWebAppInit');
 
 ReactDOM.render(<App />, document.getElementById('root'));
+if (process.env.NODE_ENV === 'development') {
+	eruda.init();
+	eruda.add(erudaCode);
+	eruda.add(erudaDom);
+}

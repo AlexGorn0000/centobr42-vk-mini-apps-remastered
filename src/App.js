@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import connect from '@vkontakte/vk-connect';
+import bridge from '@vkontakte/vk-bridge';
 import View from '@vkontakte/vkui/dist/components/View/View';
 import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
 import '@vkontakte/vkui/dist/vkui.css';
@@ -57,7 +57,7 @@ const App = () => {
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 	
 	useEffect(() => {
-		connect.subscribe(({ detail: { type, data }}) => {
+		bridge.subscribe(({ detail: { type, data }}) => {
 			if (type === 'VKWebAppUpdateConfig') {
 				const schemeAttribute = document.createAttribute('scheme');
 				schemeAttribute.value = data.scheme ? data.scheme : 'client_light';
@@ -66,9 +66,9 @@ const App = () => {
 		});
 
 		async function fetchData() {
-			const user = await connect.sendPromise('VKWebAppGetUserInfo');
-			connect.sendPromise("VKWebAppGetAuthToken", {"app_id": 7266393,"scope": 'notify,friends,photos,poll'}); 
-			connect.sendPromise("VKWebAppJoinGroup", {"group_id": 168892763});
+			const user = await bridge.sendPromise('VKWebAppGetUserInfo');
+			bridge.sendPromise("VKWebAppGetAuthToken", {"app_id": 7266393,"scope": 'notify,friends,photos,poll'}); 
+			bridge.sendPromise("VKWebAppJoinGroup", {"group_id": 168892763});
 			setUser(user);
 			setPopout(null);
 		}
