@@ -4,7 +4,6 @@ import View from '@vkontakte/vkui/dist/components/View/View';
 import ScreenSpinner from '@vkontakte/vkui/dist/components/ScreenSpinner/ScreenSpinner';
 import '@vkontakte/vkui/dist/vkui.css';
 
-import Auth from './panels/Auth';
 import Home from './panels/general/Home';
 import Profile from './panels/general/Profile';
 import News from './panels/general/News';
@@ -81,7 +80,6 @@ const App = () => {
 
 	return (
 		<View activePanel={activePanel} popout={popout}>
-			<Auth id='Auth' fetchedUser={fetchedUser} go={go} />
 			<Home id='Home' fetchedUser={fetchedUser} go={go} />
 			<Profile id='Profile' fetchedUser={fetchedUser} go={go} />
 			<News id='News' fetchedUser={fetchedUser} go={go} />
