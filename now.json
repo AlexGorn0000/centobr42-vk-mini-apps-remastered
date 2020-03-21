@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "centobr42-vk-mini-apps",
+    "name": "VK Mini App",
     "builds": [
         {
             "src": "package.json",
